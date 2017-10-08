@@ -56,10 +56,7 @@ public class Player implements Serializable {
         if (!Objects.equals(this.actor, other.actor)) {
             return false;
         }
-        if (!Objects.equals(this.games, other.games)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.games, other.games);
     }
 
     public void setActor(Actor actor) {
