@@ -7,6 +7,8 @@ package model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.ArrayList;
+
 
 /**
  *
@@ -63,11 +65,11 @@ public class DockScene {
         return true;
     }
 
-    public <any> getScenes() {
+    public ArrayList <Scene> getScenes() {
         return scenes;
     }
 
-    public void setScenes(<any> scenes) {
+    public void setScenes(ArrayList <Scene> scenes) {
         this.scenes = scenes;
     }
 
