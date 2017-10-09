@@ -92,19 +92,19 @@ public class Actor {
         this.player = player;
     }
 
-    public <any> getGames() {
+    public ArrayList <Game> getGames() {
         return games;
     }
 
-    public void setGames(<any> games) {
+    public void setGames(ArrayList <Game> games) {
         this.games = games;
     }
 
-    public <any> getLocations() {
+    public ArrayList <Location> getLocations() {
         return locations;
     }
 
-    public void setLocations(<any> locations) {
+    public void setLocations(ArrayList <Location> locations) {
         this.locations = locations;
     }
 }

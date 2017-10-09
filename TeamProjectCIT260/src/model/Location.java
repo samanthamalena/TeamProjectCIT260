@@ -7,7 +7,7 @@ package model;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.ArrayList;
-
+import model.Scene;
 /**
  *
  * @author SamanthaMalena
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Location {
     private double locationType;
     private ArrayList<Actor> actors = new ArrayList<Actor>();
-    private Scence scene;
+    private Scene scene;
     private Map map;
 
     @Override
@@ -63,11 +63,11 @@ public class Location {
     public Location() {
     }
 
-    public Scence getScene() {
+    public Scene getScene() {
         return scene;
     }
 
-    public void setScene(Scence scene) {
+    public void setScene(Scene scene) {
         this.scene = scene;
     }
 
@@ -87,11 +87,11 @@ public class Location {
         this.locationType = locationType;
     }
 
-    public <any> getActors() {
+    public ArrayList <Actor> getActors() {
         return actors;
     }
 
-    public void setActors(<any> actors) {
+    public void setActors(ArrayList <Actor> actors) {
         this.actors = actors;
     }
 
