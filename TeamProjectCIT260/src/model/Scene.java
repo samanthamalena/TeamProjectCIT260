@@ -101,11 +101,11 @@ public class Scene {
         this.dockScene = dockScene;
     }
 
-    public <any> getLocations() {
+    public ArrayList <Location> getLocations() {
         return locations;
     }
 
-    public void setLocations(<any> locations) {
+    public void setLocations(ArrayList <Location> locations) {
         this.locations = locations;
     }
     
