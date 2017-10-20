@@ -19,12 +19,18 @@ public class InventoryControl {
        return 2 * (length + width);
     }
    }
-   public static double calcArea(double length, double width){
-    if (length < 0 || length > 200 || width < 0 || width > 200) {
+   public static double calcArea(double base1, double base2, double height){
+    if (base1 < 0 || base1 > 50) {
        return -1;
     }
+    if ( base2 < 0 || base2 > 50){
+        return -1;
+    }
+    if (height < 0 || height > 25){
+        return -1;
+    }
     else { 
-       return 2 * (length + width);
+       return ((base1 + base2)/2)* height;
     }
    }
    
