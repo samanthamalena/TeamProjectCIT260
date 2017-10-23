@@ -161,5 +161,61 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
     }
     
+    /**
+     * Test of calcArea method, of class InventoryControl.
+     */
+    @Test
+    public void testSurfaceArea() {
+        System.out.println("calcSurfaceArea");
+        System.out.println("Test Case 1");
+        double side = 4.0;
+        double height = 12.0;
+        double expResult = 162.0;
+        double result = InventoryControl.calcSurfaceArea(side, height);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("Test Case 2");
+        side = 4.0;
+        height = 12.0;
+        expResult = 162.0;
+        result = InventoryControl.calcSurfaceArea(side, height);
+        assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
+        
+        System.out.println("Test Case 3");
+        side = 4.0;
+        height = 12.0;
+        expResult = 162.0;
+        result = InventoryControl.calcSurfaceArea(side, height);
+        assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
+
+        System.out.println("Test Case 4");
+        side = 4.0;
+        height = 12.0;
+        expResult = 162.0;
+        result = InventoryControl.calcSurfaceArea(side, height);
+        assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
+        
+        System.out.println("Test Case 5");
+        side = 4.0;
+        height = 12.0;
+        expResult = 162.0;
+        result = InventoryControl.calcSurfaceArea(side, height);
+        assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
+        
+        System.out.println("Test Case 6");
+        side = 4.0;
+        height = 12.0;
+        expResult = 162.0;
+        result = InventoryControl.calcSurfaceArea(side, height);
+        assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
+        
+        System.out.println("Test Case 7");
+        side = 4.0;
+        height = 12.0;
+        expResult = 162.0;
+        result = InventoryControl.calcSurfaceArea(side, height);
+        assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
+        
+    }
     
 }
