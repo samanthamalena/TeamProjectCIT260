@@ -33,5 +33,13 @@ public class InventoryControl {
        return ((base1 + base2)/2)* height;
     }
    }
+   public static double calcSurfaceArea(double side, double height){
+        if (side < 0 || side > 200 || height < 0 || height > 200){
+            return -1;
+        }
+        else{
+            return (side * side) + (2 * side) * Math.sqrt(((side * side) / 4) + (height * height));
+        }
+   }
    
 }
