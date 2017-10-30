@@ -6,6 +6,7 @@
 package teamprojectcit260;
 
 import model.Player;
+import citbyui.cit260.floood.view.StartProgramView;
 
 /**
  *
@@ -13,14 +14,15 @@ import model.Player;
  */
 public class TeamProjectCIT260 {
 
-    /**
+    /*f*
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        StartProgramView derp = new StartProgramView();
+        derp.displayDescription();
+        System.out.println("Enter s to continue");
+        String input = derp.getInputs();
         
-        Player player = new Player();
-        player.setName("Durped");
-        // TODO code application logic here
     }
     
 }
