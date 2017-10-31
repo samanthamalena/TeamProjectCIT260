@@ -19,9 +19,7 @@ public class TeamProjectCIT260 {
      */
     public static void main(String[] args) {
         StartProgramView derp = new StartProgramView();
-        derp.displayDescription();
-        System.out.println("Enter s to continue");
-        String input = derp.getInputs();
+        derp.displayStartProgramView();
         
     }
     
