@@ -5,8 +5,8 @@
  */
 package teamprojectcit260;
 
-import model.Player;
 import citbyui.cit260.floood.view.StartProgramView;
+import citbyui.cit260.floood.view.GameMenuView;
 
 /**
  *
@@ -20,6 +20,12 @@ public class TeamProjectCIT260 {
     public static void main(String[] args) {
         StartProgramView derp = new StartProgramView();
         derp.displayStartProgramView();
+        
+    }
+    
+      public static void gamemain(String[] args) {
+        GameMenuView pred = new GameMenuView();
+        pred.displayGameMenuView();
         
     }
     
