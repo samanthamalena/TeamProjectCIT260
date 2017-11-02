@@ -27,23 +27,16 @@ public class GameMenuView {
         }
         while(endView == false);
     }
-    
-    public void displayDescription(){
-        System.out.println("This is the game description");
-    }
-    public void displayGameMenu(){
-        System.out.println("s - Load State\nn - New State\nh - Help Menu\ne - Exit");
-        
-    }
+   
     public String[] getInputs(){
         Scanner infile = new Scanner(System.in);
         String[] inputs = new String[1];
-        this.displayDescription();
+        System.out.println("\nL - Load State\nN - New State\nH - Help Menu\nQ - Exit");
         boolean valid = false;
         do{
-            System.out.println("Enter the Player's name");
+            System.out.println("\n\nEnter one of the options");
             inputs[0] = infile.nextLine();
-            if (inputs[0].length() > 2)
+            if (inputs[0].length() > 0)
                 valid = true;
                 
         }
@@ -52,7 +45,7 @@ public class GameMenuView {
     }
 
     private boolean doAction(String[] inputs) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
     
     

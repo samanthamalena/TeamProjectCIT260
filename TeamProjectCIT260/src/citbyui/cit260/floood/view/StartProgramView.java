@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.floood.view;
 import java.util.Scanner;
+import byui.cit260.control.gameControl;
+import model.Player;
 
 /**
  *
@@ -50,18 +52,19 @@ public class StartProgramView {
 
     private boolean doAction(String[] inputs) {
         String playerName = inputs[0];
-       // String player = savePlayer(playerName);
-       // if (player == null){
-         //   System.out.println("\nCould not create the player\nEnter a different name.");
-           // return false;
-       // }
-//        System.out.println("\n=====================================");
-//        System.out.println("\nWelcome to the game");
-//        System.out.println(playerName);
-//        System.out.println("\nWe hope you have a lot of fun!");
-//        System.out.println("\n=====================================");
-        //MainMenuView derp = new MainMenuView();
-        //derp.displayMainMenuView();
+        gameControl herp = new gameControl();
+        Player player = herp.savePlayer(playerName);
+        if (player == null){
+            System.out.println("\nCould not create the player\nEnter a different name.");
+            return false;
+        }
+        System.out.println("\n=====================================");
+        System.out.println("\nWelcome to the game");
+        System.out.println(playerName);
+        System.out.println("\nWe hope you have a lot of fun!");
+        System.out.println("\n=====================================");
+        GameMenuView derp = new GameMenuView();
+        derp.displayGameMenuView();
         return true;
     }
     

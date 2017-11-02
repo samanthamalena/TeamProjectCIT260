@@ -19,14 +19,7 @@ public class TeamProjectCIT260 {
      */
     public static void main(String[] args) {
         StartProgramView derp = new StartProgramView();
-        derp.displayStartProgramView();
-        
-    }
-    
-      public static void gamemain(String[] args) {
-        GameMenuView pred = new GameMenuView();
-        pred.displayGameMenuView();
-        
+        derp.displayStartProgramView();   
     }
     
 }
