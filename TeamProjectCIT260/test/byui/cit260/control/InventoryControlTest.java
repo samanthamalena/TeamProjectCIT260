@@ -28,49 +28,49 @@ public class InventoryControlTest {
         double length = 10.0;
         double width = 20.0;
         double expResult = 60.0;
-        double result = InventoryControl.calcPerimeter(length, width);
+        double result = EquationControl.calcPerimeter(length, width);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 2");
         length = -10.0;
         width = 4.0;
         expResult = -1.0;
-        result = InventoryControl.calcPerimeter(length, width);
+        result = EquationControl.calcPerimeter(length, width);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 3");
         length = 7.0;
         width = -34.0;
         expResult = -1.0;
-        result = InventoryControl.calcPerimeter(length, width);
+        result = EquationControl.calcPerimeter(length, width);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 4");
         length = 0.0;
         width = 200.0;
         expResult = 400.0;
-        result = InventoryControl.calcPerimeter(length, width);
+        result = EquationControl.calcPerimeter(length, width);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 5");
         length = 200.0;
         width = 0.0;
         expResult = 400.0;
-        result = InventoryControl.calcPerimeter(length, width);
+        result = EquationControl.calcPerimeter(length, width);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 6");
         length = 201.0;
         width = 2.0;
         expResult = -1.0;
-        result = InventoryControl.calcPerimeter(length, width);
+        result = EquationControl.calcPerimeter(length, width);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 7");
         length = 6.0;
         width = -201.0;
         expResult = -1.0;
-        result = InventoryControl.calcPerimeter(length, width);
+        result = EquationControl.calcPerimeter(length, width);
         assertEquals(expResult, result, 0.0);
     }
 
@@ -85,7 +85,7 @@ public class InventoryControlTest {
         double base2 = 23.0;
         double height = 12.0;
         double expResult = 162.0;
-        double result = InventoryControl.calcArea(base1, base2, height);
+        double result = EquationControl.calcArea(base1, base2, height);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 2");
@@ -93,7 +93,7 @@ public class InventoryControlTest {
         base2 = 15.0;
         height = 2.0;
         expResult = -1.0;
-        result = InventoryControl.calcArea(base1, base2, height);
+        result = EquationControl.calcArea(base1, base2, height);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 3");
@@ -101,7 +101,7 @@ public class InventoryControlTest {
         base2 = -45.0;
         height = 32.0;
         expResult = -1.0;
-        result = InventoryControl.calcArea(base1, base2, height);
+        result = EquationControl.calcArea(base1, base2, height);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 4");
@@ -109,7 +109,7 @@ public class InventoryControlTest {
         base2 = 20.0;
         height = -12.0;
         expResult = -1.0;
-        result = InventoryControl.calcArea(base1, base2, height);
+        result = EquationControl.calcArea(base1, base2, height);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 5");
@@ -117,7 +117,7 @@ public class InventoryControlTest {
         base2 = 50.0;
         height = 0.0;
         expResult = 0.0;
-        result = InventoryControl.calcArea(base1, base2, height);
+        result = EquationControl.calcArea(base1, base2, height);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 6");
@@ -125,7 +125,7 @@ public class InventoryControlTest {
         base2 = 0.0;
         height = 0.0;
         expResult = 0.0;
-        result = InventoryControl.calcArea(base1, base2, height);
+        result = EquationControl.calcArea(base1, base2, height);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 7");
@@ -133,7 +133,7 @@ public class InventoryControlTest {
         base2 = 0.0;
         height = 25.0;
         expResult = 0.0;
-        result = InventoryControl.calcArea(base1, base2, height);
+        result = EquationControl.calcArea(base1, base2, height);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 8");
@@ -141,7 +141,7 @@ public class InventoryControlTest {
         base2 = 2.0;
         height = 26.0;
         expResult = -1.0;
-        result = InventoryControl.calcArea(base1, base2, height);
+        result = EquationControl.calcArea(base1, base2, height);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 9");
@@ -149,7 +149,7 @@ public class InventoryControlTest {
         base2 = 51.0;
         height = 2.0;
         expResult = -1.0;
-        result = InventoryControl.calcArea(base1, base2, height);
+        result = EquationControl.calcArea(base1, base2, height);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 10");
@@ -157,7 +157,7 @@ public class InventoryControlTest {
         base2 = 2.0;
         height = 2.0;
         expResult = -1.0;
-        result = InventoryControl.calcArea(base1, base2, height);
+        result = EquationControl.calcArea(base1, base2, height);
         assertEquals(expResult, result, 0.0);
     }
     
@@ -171,49 +171,49 @@ public class InventoryControlTest {
         double side = 4.0;
         double height = 12.0;
         double expResult = 162.0;
-        double result = InventoryControl.calcSurfaceArea(side, height);
+        double result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 2");
         side = 4.0;
         height = 12.0;
         expResult = 162.0;
-        result = InventoryControl.calcSurfaceArea(side, height);
+        result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 3");
         side = 4.0;
         height = 12.0;
         expResult = 162.0;
-        result = InventoryControl.calcSurfaceArea(side, height);
+        result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
 
         System.out.println("Test Case 4");
         side = 4.0;
         height = 12.0;
         expResult = 162.0;
-        result = InventoryControl.calcSurfaceArea(side, height);
+        result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 5");
         side = 4.0;
         height = 12.0;
         expResult = 162.0;
-        result = InventoryControl.calcSurfaceArea(side, height);
+        result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 6");
         side = 4.0;
         height = 12.0;
         expResult = 162.0;
-        result = InventoryControl.calcSurfaceArea(side, height);
+        result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 7");
         side = 4.0;
         height = 12.0;
         expResult = 162.0;
-        result = InventoryControl.calcSurfaceArea(side, height);
+        result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
         
     }

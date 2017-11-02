@@ -5,7 +5,7 @@
  */
 package citbyui.cit260.floood.view;
 import java.util.Scanner;
-import byui.cit260.control.gameControl;
+import byui.cit260.control.GameControl;
 import model.Player;
 
 /**
@@ -25,7 +25,7 @@ public class StartProgramView {
             if (inputs == null || inputs.length < 1 || inputs[0].toUpperCase().equals("Q") ){
                 return;
             }
-            //endView = this.doAction(inputs);
+            endView = this.doAction(inputs);
         }
         while(endView == false);
     }
@@ -52,7 +52,7 @@ public class StartProgramView {
 
     private boolean doAction(String[] inputs) {
         String playerName = inputs[0];
-        gameControl herp = new gameControl();
+        GameControl herp = new GameControl();
         Player player = herp.savePlayer(playerName);
         if (player == null){
             System.out.println("\nCould not create the player\nEnter a different name.");

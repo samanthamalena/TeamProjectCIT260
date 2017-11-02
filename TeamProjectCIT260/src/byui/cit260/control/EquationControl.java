@@ -9,7 +9,7 @@ package byui.cit260.control;
  *
  * @author SamanthaMalena
  */
-public class InventoryControl {
+public class EquationControl {
     
     
     
