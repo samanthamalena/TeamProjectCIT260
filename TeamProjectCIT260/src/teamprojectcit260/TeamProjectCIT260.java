@@ -6,7 +6,8 @@
 package teamprojectcit260;
 
 import citbyui.cit260.floood.view.StartProgramView;
-import citbyui.cit260.floood.view.GameMenuView;
+import citbyui.cit260.floood.view.MainMenuView;
+
 
 /**
  *
