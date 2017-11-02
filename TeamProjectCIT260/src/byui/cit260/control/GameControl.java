@@ -22,4 +22,8 @@ public class GameControl {
         
         return player;
     }
+    public void createNewGame(){
+        System.out.println("\n*****NewGameCreated*****");
+        
+    }
 }
