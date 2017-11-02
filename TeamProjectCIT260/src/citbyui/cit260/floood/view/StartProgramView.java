@@ -63,7 +63,7 @@ public class StartProgramView {
         System.out.println(playerName);
         System.out.println("\nWe hope you have a lot of fun!");
         System.out.println("\n=====================================");
-        GameMenuView derp = new GameMenuView();
+        MainMenuView derp = new MainMenuView();
         derp.displayGameMenuView();
         return true;
     }
