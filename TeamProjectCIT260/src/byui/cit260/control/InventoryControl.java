@@ -11,6 +11,10 @@ package byui.cit260.control;
  */
 public class InventoryControl {
     
+    
+    
+    
+    
    public static double calcPerimeter(double length, double width){
     if (length < 0 || length > 200 || width < 0 || width > 200) {
        return -1;

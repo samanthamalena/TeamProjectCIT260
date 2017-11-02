@@ -23,36 +23,46 @@ public class StartProgramView {
             if (inputs == null || inputs.length < 1 || inputs[0].toUpperCase().equals("Q") ){
                 return;
             }
-            endView = this.doAction(inputs);
+            //endView = this.doAction(inputs);
         }
         while(endView == false);
     }
-    
-    public void displayDescription(){
-        System.out.println("This is the game description");
-    }
-    public void displayStartMenu(){
-        System.out.println("s - Load State\nn - New State\nh - Help Menu\ne - Exit");
-        
-    }
     public String[] getInputs(){
-        Scanner infile = new Scanner(System.in);
         String[] inputs = new String[1];
-        this.displayDescription();
+        System.out.println("\n*****ThisIsTheWelcomeBanner*****");
         boolean valid = false;
-        do{
-            System.out.println("Enter the Player's name");
-            inputs[0] = infile.nextLine();
-            if (inputs[0].length() > 2)
+        while (valid == false){
+            System.out.println("\nEnter The Player's name");
+            Scanner infile = new Scanner(System.in);
+            String name = infile.nextLine();
+            name.trim();
+            if (name.length() < 1){
+                System.out.println("\nyou must enter a value");
+            }
+            else{
+                inputs[0] = name;
                 valid = true;
-                
+            }
+            
         }
-        while(valid == false);
         return inputs;
     }
 
     private boolean doAction(String[] inputs) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String playerName = inputs[0];
+       // String player = savePlayer(playerName);
+       // if (player == null){
+         //   System.out.println("\nCould not create the player\nEnter a different name.");
+           // return false;
+       // }
+//        System.out.println("\n=====================================");
+//        System.out.println("\nWelcome to the game");
+//        System.out.println(playerName);
+//        System.out.println("\nWe hope you have a lot of fun!");
+//        System.out.println("\n=====================================");
+        //MainMenuView derp = new MainMenuView();
+        //derp.displayMainMenuView();
+        return true;
     }
     
     
