@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.floood.view;
+package view;
 
-import byui.cit260.control.GameControl;
+import control.GameControl;
 import java.util.Scanner;
 import model.Player;
 
@@ -13,13 +13,13 @@ import model.Player;
  *
  * @author Samantha Hancock
  */
-public class DockMenuView {
+public class MapMenuView {
     
-    public DockMenuView(){
+    public MapMenuView(){
     
     }
     
-    public void displayDockMenuView(){
+    public void display(){
         boolean endView = false;
         do{
             String[] inputs = getInputs();
@@ -32,10 +32,10 @@ public class DockMenuView {
     }
     public String[] getInputs(){
         String[] inputs = new String[1];
-        System.out.println("\n*****ThisIsTheDOCKmenu*****");
+        System.out.println("\n*****ThisIsTheWelcomeBanner*****");
         boolean valid = false;
         while (valid == false){
-            System.out.println("\nEnter a command");
+            System.out.println("\nEnter The Player's name");
             Scanner infile = new Scanner(System.in);
             String name = infile.nextLine();
             name.trim();
@@ -51,19 +51,16 @@ public class DockMenuView {
         return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+     private boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         menuItem.toUpperCase();
         menuItem.trim();
         switch (menuItem){
-            case "S":
-                this.displaySaveMenu();
-                break;
             case "E":
-                this.displayMapMenu();
+                this.displayExploreMenu();
                 break;
-            case "B":
-                this.displayBoatMenu();
+            case "I":
+                this.displayInfo();
                 break;
             case "Q":
                 break;
@@ -71,15 +68,10 @@ public class DockMenuView {
         return true;
     }
    
-    public void displaySaveMenu() {
-    
+    public void displayExploreMenu() {
+   
     }
-    public void displayMapMenu() {
-        MapMenuView map = new MapMenuView();
-        map.display();
-    
-    }
-    public void displayBoatMenu() {
+    public void displayInfo() {
     
     }
     

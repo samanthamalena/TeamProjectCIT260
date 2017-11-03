@@ -3,22 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.floood.view;
+package view;
+
 import java.util.Scanner;
-import byui.cit260.control.GameControl;
-import model.Player;
 
 /**
  *
  * @author Me
  */
-public class StartProgramView {
-    
-    public StartProgramView(){
-    
+public class BoatMenuView {
+    public BoatMenuView(){
+        
     }
-    
-    public void displayStartProgramView(){
+    public void display(){
         boolean endView = false;
         do{
             String[] inputs = getInputs();
@@ -29,12 +26,13 @@ public class StartProgramView {
         }
         while(endView == false);
     }
+    
     public String[] getInputs(){
         String[] inputs = new String[1];
-        System.out.println("\n*****ThisIsTheWelcomeBanner*****");
+        System.out.println("\n*****This Is The Boat menu*****");
         boolean valid = false;
         while (valid == false){
-            System.out.println("\nEnter The Player's name");
+            System.out.println("\nEnter a command");
             Scanner infile = new Scanner(System.in);
             String name = infile.nextLine();
             name.trim();
@@ -49,24 +47,29 @@ public class StartProgramView {
         }
         return inputs;
     }
-
+    
     private boolean doAction(String[] inputs) {
-        String playerName = inputs[0];
-        GameControl herp = new GameControl();
-        Player player = herp.savePlayer(playerName);
-        if (player == null){
-            System.out.println("\nCould not create the player\nEnter a different name.");
-            return false;
+        String menuItem = inputs[0];
+        menuItem.toUpperCase();
+        menuItem.trim();
+        switch (menuItem){
+            case "B":
+                this.buildBoat();
+                break;
+            case "I":
+                this.info();
+                break;
+            case "Q":
+                break;
         }
-        System.out.println("\n=====================================");
-        System.out.println("\nWelcome to the game");
-        System.out.println(playerName);
-        System.out.println("\nWe hope you have a lot of fun!");
-        System.out.println("\n=====================================");
-        MainMenuView derp = new MainMenuView();
-        derp.displayGameMenuView();
         return true;
     }
-    
-    
+
+    private void info() {
+       
+    }
+
+    private void buildBoat() {
+        
+    }
 }

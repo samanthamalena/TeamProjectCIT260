@@ -3,23 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.floood.view;
-
-import byui.cit260.control.GameControl;
+package view;
 import java.util.Scanner;
+import control.GameControl;
 import model.Player;
 
 /**
  *
- * @author Samantha Hancock
+ * @author Me
  */
-public class HelpMenuView {
+public class StartProgramView {
     
-    public HelpMenuView(){
+    public StartProgramView(){
     
     }
     
-    public void displayHelpMenuView(){
+    public void display(){
         boolean endView = false;
         do{
             String[] inputs = getInputs();
@@ -32,10 +31,10 @@ public class HelpMenuView {
     }
     public String[] getInputs(){
         String[] inputs = new String[1];
-        System.out.println("\n*****ThisIsTheHelpMenuWooohoo*****");
+        System.out.println("\n*****ThisIsTheWelcomeBanner*****");
         boolean valid = false;
         while (valid == false){
-            System.out.println("\nEnter an option");
+            System.out.println("\nEnter The Player's name");
             Scanner infile = new Scanner(System.in);
             String name = infile.nextLine();
             name.trim();
@@ -51,40 +50,23 @@ public class HelpMenuView {
         return inputs;
     }
 
-   private boolean doAction(String[] inputs) {
-        String menuItem = inputs[0];
-        menuItem.toUpperCase();
-        menuItem.trim();
-        switch (menuItem){
-            case "D":
-                this.displayDockMenuHelp();
-                break;
-            case "I":
-                this.displayInventoryMenuHelp();
-                break;
-            case "B":
-                this.displayBoatMenuHelp();
-                break;
-            case "M":
-                this.displayMapMenuHelp();
-                break;
-            case "Q":
-                break;
+    private boolean doAction(String[] inputs) {
+        String playerName = inputs[0];
+        GameControl herp = new GameControl();
+        Player player = herp.savePlayer(playerName);
+        if (player == null){
+            System.out.println("\nCould not create the player\nEnter a different name.");
+            return false;
         }
+        System.out.println("\n=====================================");
+        System.out.println("\nWelcome to the game");
+        System.out.println(playerName);
+        System.out.println("\nWe hope you have a lot of fun!");
+        System.out.println("\n=====================================");
+        MainMenuView derp = new MainMenuView();
+        derp.display();
         return true;
     }
-   
-    public void displayDockMenuHelp() {
     
-    }
-    public void displayInventoryMenuHelp() {
     
-    }
-    public void displayBoatMenuHelp() {
-    
-    }
-    public void displayMapMenuHelp() {
-    
-    }
 }
-

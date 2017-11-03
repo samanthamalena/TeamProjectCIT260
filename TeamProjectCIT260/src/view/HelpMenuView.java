@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.floood.view;
+package view;
 
-import byui.cit260.control.GameControl;
+import control.GameControl;
 import java.util.Scanner;
 import model.Player;
 
@@ -13,9 +13,9 @@ import model.Player;
  *
  * @author Samantha Hancock
  */
-public class MapMenuView {
+public class HelpMenuView {
     
-    public MapMenuView(){
+    public HelpMenuView(){
     
     }
     
@@ -32,10 +32,10 @@ public class MapMenuView {
     }
     public String[] getInputs(){
         String[] inputs = new String[1];
-        System.out.println("\n*****ThisIsTheWelcomeBanner*****");
+        System.out.println("\n*****ThisIsTheHelpMenuWooohoo*****");
         boolean valid = false;
         while (valid == false){
-            System.out.println("\nEnter The Player's name");
+            System.out.println("\nEnter an option");
             Scanner infile = new Scanner(System.in);
             String name = infile.nextLine();
             name.trim();
@@ -51,16 +51,22 @@ public class MapMenuView {
         return inputs;
     }
 
-     private boolean doAction(String[] inputs) {
+   private boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         menuItem.toUpperCase();
         menuItem.trim();
         switch (menuItem){
-            case "E":
-                this.displayExploreMenu();
+            case "D":
+                this.displayDockMenuHelp();
                 break;
             case "I":
-                this.displayInfo();
+                this.displayInventoryMenuHelp();
+                break;
+            case "B":
+                this.displayBoatMenuHelp();
+                break;
+            case "M":
+                this.displayMapMenuHelp();
                 break;
             case "Q":
                 break;
@@ -68,11 +74,17 @@ public class MapMenuView {
         return true;
     }
    
-    public void displayExploreMenu() {
-   
-    }
-    public void displayInfo() {
+    public void displayDockMenuHelp() {
     
     }
+    public void displayInventoryMenuHelp() {
     
+    }
+    public void displayBoatMenuHelp() {
+    
+    }
+    public void displayMapMenuHelp() {
+    
+    }
 }
+

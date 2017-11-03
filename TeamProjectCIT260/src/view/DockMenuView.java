@@ -3,21 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.floood.view;
+package view;
+
+import control.GameControl;
 import java.util.Scanner;
-import byui.cit260.control.GameControl;
+import model.Player;
 
 /**
  *
  * @author Samantha Hancock
  */
-public class MainMenuView {
+public class DockMenuView {
     
-    public MainMenuView(){
+    public DockMenuView(){
     
     }
     
-    public void displayGameMenuView(){
+    public void display(){
         boolean endView = false;
         do{
             String[] inputs = getInputs();
@@ -28,20 +30,24 @@ public class MainMenuView {
         }
         while(endView == false);
     }
-   
     public String[] getInputs(){
-        Scanner infile = new Scanner(System.in);
         String[] inputs = new String[1];
-        System.out.println("\nL - Load State\nN - New State\nH - Help Menu\nQ - Exit");
+        System.out.println("\n*****ThisIsTheDOCKmenu*****");
         boolean valid = false;
-        do{
-            System.out.println("\n\nEnter one of the options");
-            inputs[0] = infile.nextLine();
-            if (inputs[0].length() > 0)
+        while (valid == false){
+            System.out.println("\nEnter a command");
+            Scanner infile = new Scanner(System.in);
+            String name = infile.nextLine();
+            name.trim();
+            if (name.length() < 1){
+                System.out.println("\nyou must enter a value");
+            }
+            else{
+                inputs[0] = name;
                 valid = true;
-                
+            }
+            
         }
-        while(valid == false);
         return inputs;
     }
 
@@ -50,32 +56,31 @@ public class MainMenuView {
         menuItem.toUpperCase();
         menuItem.trim();
         switch (menuItem){
-            case "L":
-                this.loadState();
+            case "S":
+                this.displaySaveMenu();
                 break;
-            case "N":
-                this.newState();
+            case "E":
+                this.displayMapMenu();
                 break;
-            case "H":
-                this.helpMenu();
+            case "B":
+                this.displayBoatMenu();
                 break;
             case "Q":
                 break;
         }
         return true;
     }
-    
-    public void loadState() {
-    
-    }
-    public void newState() {
-        GameControl game = new GameControl();
-        game.createNewGame();
+   
+    public void displaySaveMenu() {
     
     }
-    public void helpMenu() {
-        HelpMenuView help = new HelpMenuView();
-        help.displayHelpMenuView();
+    public void displayMapMenu() {
+        MapMenuView map = new MapMenuView();
+        map.display();
+    
+    }
+    public void displayBoatMenu() {
+    
     }
     
 }

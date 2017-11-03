@@ -5,13 +5,13 @@
  */
 package teamprojectcit260;
 
-import citbyui.cit260.floood.view.StartProgramView;
-import citbyui.cit260.floood.view.MainMenuView;
+import view.StartProgramView;
+import view.MainMenuView;
 
 
 /**
  *
- * @author SamanthaMalena
+ * @author derpHead
  */
 public class TeamProjectCIT260 {
 
@@ -20,7 +20,7 @@ public class TeamProjectCIT260 {
      */
     public static void main(String[] args) {
         StartProgramView derp = new StartProgramView();
-        derp.displayStartProgramView();   
+        derp.display();   
     }
     
 }

@@ -5,6 +5,7 @@
  */
 package byui.cit260.control;
 
+import control.EquationControl;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

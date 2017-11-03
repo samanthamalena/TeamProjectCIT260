@@ -3,20 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.floood.view;
+package view;
 import java.util.Scanner;
+import control.GameControl;
 
 /**
  *
  * @author Samantha Hancock
  */
-public class GameMenuView {
+public class MainMenuView {
     
-    public GameMenuView(){
+    public MainMenuView(){
     
     }
     
-    public void displayGameMenuView(){
+    public void display(){
         boolean endView = false;
         do{
             String[] inputs = getInputs();
@@ -45,8 +46,36 @@ public class GameMenuView {
     }
 
     private boolean doAction(String[] inputs) {
+        String menuItem = inputs[0];
+        menuItem.toUpperCase();
+        menuItem.trim();
+        switch (menuItem){
+            case "L":
+                this.loadState();
+                break;
+            case "N":
+                this.newState();
+                break;
+            case "H":
+                this.helpMenu();
+                break;
+            case "Q":
+                break;
+        }
         return true;
     }
     
+    public void loadState() {
+    
+    }
+    public void newState() {
+        GameControl game = new GameControl();
+        game.createNewGame();
+    
+    }
+    public void helpMenu() {
+        HelpMenuView help = new HelpMenuView();
+        help.display();
+    }
     
 }
