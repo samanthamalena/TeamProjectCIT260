@@ -7,6 +7,7 @@ package teamprojectcit260;
 
 import view.StartProgramView;
 import view.MainMenuView;
+import control.EquationControl;
 
 
 /**
@@ -19,8 +20,13 @@ public class TeamProjectCIT260 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        StartProgramView derp = new StartProgramView();
-        derp.display();   
+        //StartProgramView derp = new StartProgramView();
+        //derp.display();
+        int base = 10;
+        int height = 20;
+        EquationControl yerp = new EquationControl();
+        System.out.println(yerp.calcSurfaceArea(base, height));
+        
     }
     
 }

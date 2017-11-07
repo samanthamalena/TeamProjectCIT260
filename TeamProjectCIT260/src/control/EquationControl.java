@@ -11,7 +11,9 @@ package control;
  */
 public class EquationControl {
     
-    
+    public EquationControl(){
+        
+    }
     
     
     
@@ -38,11 +40,12 @@ public class EquationControl {
     }
    }
    public static double calcSurfaceArea(double side, double height){
-        if (side < 0 || side > 200 || height < 0 || height > 200){
+        if (side < 1 || side > 200 || height < 1 || height > 200){
             return -1;
         }
         else{
-            return (side * side) + (2 * side) * Math.sqrt(((side * side) / 4) + (height * height));
+            double equation = (side * side) + (2 * side) * Math.sqrt(side * side / 4 + (height * height))  ;
+            return Math.round(100 * equation)/100.0;
         }
    }
    

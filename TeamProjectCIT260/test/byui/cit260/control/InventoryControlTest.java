@@ -169,51 +169,51 @@ public class InventoryControlTest {
     public void testSurfaceArea() {
         System.out.println("calcSurfaceArea");
         System.out.println("Test Case 1");
-        double side = 4.0;
-        double height = 12.0;
-        double expResult = 162.0;
+        double side = 10;
+        double height = 20;
+        double expResult = 512.31;
         double result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 2");
-        side = 4.0;
-        height = 12.0;
-        expResult = 162.0;
+        side = -10.0;
+        height = 4.0;
+        expResult = -1;
         result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 3");
-        side = 4.0;
-        height = 12.0;
-        expResult = 162.0;
+        side = 7.0;
+        height = -87.0;
+        expResult = -1.0;
         result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
 
         System.out.println("Test Case 4");
-        side = 4.0;
-        height = 12.0;
-        expResult = 162.0;
+        side = 45.0;
+        height = 567.0;
+        expResult = -1.0;
         result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 5");
-        side = 4.0;
-        height = 12.0;
-        expResult = 162.0;
+        side = 1.0;
+        height = 120.0;
+        expResult = 241.0;
         result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 6");
-        side = 4.0;
-        height = 12.0;
-        expResult = 162.0;
+        side = 20.0;
+        height = 1.0;
+        expResult = 802.0;
         result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
         
         System.out.println("Test Case 7");
-        side = 4.0;
-        height = 12.0;
-        expResult = 162.0;
+        side = 200.0;
+        height = 10.0;
+        expResult = 80199.5;
         result = EquationControl.calcSurfaceArea(side, height);
         assertEquals(expResult, result, 0.0);assertEquals(expResult, result, 0.0);
         
