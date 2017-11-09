@@ -12,45 +12,19 @@ import model.Player;
  *
  * @author Me
  */
-public class StartProgramView {
+public class StartProgramView extends View {
     
     public StartProgramView(){
     
     }
-    
-    public void display(){
-        boolean endView = false;
-        do{
-            String[] inputs = getInputs();
-            if (inputs == null || inputs.length < 1 || inputs[0].toUpperCase().equals("Q") ){
-                return;
-            }
-            endView = this.doAction(inputs);
-        }
-        while(endView == false);
-    }
+    @Override
     public String[] getInputs(){
-        String[] inputs = new String[1];
-        System.out.println("\n*****ThisIsTheWelcomeBanner*****");
-        boolean valid = false;
-        while (valid == false){
-            System.out.println("\nEnter The Player's name");
-            Scanner infile = new Scanner(System.in);
-            String name = infile.nextLine();
-            name.trim();
-            if (name.length() < 1){
-                System.out.println("\nyou must enter a value");
-            }
-            else{
-                inputs[0] = name;
-                valid = true;
-            }
-            
-        }
+        String inputs[] = new String[1];
+        inputs[0] = this.getInput("\nPlease enter your name: ");
         return inputs;
     }
-
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
         String playerName = inputs[0];
         GameControl herp = new GameControl();
         Player player = herp.savePlayer(playerName);

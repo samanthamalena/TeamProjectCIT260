@@ -11,41 +11,21 @@ import control.GameControl;
  *
  * @author Samantha Hancock
  */
-public class MainMenuView {
+public class MainMenuView extends View {
     
     public MainMenuView(){
     
     }
-    
-    public void display(){
-        boolean endView = false;
-        do{
-            String[] inputs = getInputs();
-            if (inputs == null || inputs.length < 1 || inputs[0].toUpperCase().equals("Q") ){
-                return;
-            }
-            endView = this.doAction(inputs);
-        }
-        while(endView == false);
-    }
-   
+
+   @Override
     public String[] getInputs(){
-        Scanner infile = new Scanner(System.in);
-        String[] inputs = new String[1];
-        System.out.println("\nL - Load State\nN - New State\nH - Help Menu\nQ - Exit");
-        boolean valid = false;
-        do{
-            System.out.println("\n\nEnter one of the options");
-            inputs[0] = infile.nextLine();
-            if (inputs[0].length() > 0)
-                valid = true;
-                
-        }
-        while(valid == false);
+        String inputs[] = new String[1];
+        inputs[0] = this.getInput("\nMain menu Prompot ");
         return inputs;
     }
-
-    private boolean doAction(String[] inputs) {
+    
+    @Override
+    public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         menuItem.toUpperCase();
         menuItem.trim();
