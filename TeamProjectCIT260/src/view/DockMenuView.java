@@ -5,53 +5,25 @@
  */
 package view;
 
-import control.GameControl;
-import java.util.Scanner;
-import model.Player;
-
 /**
  *
  * @author Samantha Hancock
  */
-public class DockMenuView {
+public class DockMenuView extends View {
     
     public DockMenuView(){
     
     }
     
-    public void display(){
-        boolean endView = false;
-        do{
-            String[] inputs = getInputs();
-            if (inputs == null || inputs.length < 1 || inputs[0].toUpperCase().equals("Q") ){
-                return;
-            }
-            endView = this.doAction(inputs);
-        }
-        while(endView == false);
-    }
+    @Override
     public String[] getInputs(){
-        String[] inputs = new String[1];
-        System.out.println("\n*****ThisIsTheDOCKmenu*****");
-        boolean valid = false;
-        while (valid == false){
-            System.out.println("\nEnter a command");
-            Scanner infile = new Scanner(System.in);
-            String name = infile.nextLine();
-            name.trim();
-            if (name.length() < 1){
-                System.out.println("\nyou must enter a value");
-            }
-            else{
-                inputs[0] = name;
-                valid = true;
-            }
-            
-        }
+        String inputs[] = new String[1];
+        inputs[0] = this.getInput("\nMain menu Prompot ");
         return inputs;
     }
-
-    private boolean doAction(String[] inputs) {
+    
+    @Override
+    public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         menuItem.toUpperCase();
         menuItem.trim();
