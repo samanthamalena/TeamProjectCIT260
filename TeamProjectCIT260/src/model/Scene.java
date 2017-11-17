@@ -15,24 +15,54 @@ import java.util.ArrayList;
  */
 public class Scene {
     private String description;
-    private double blocked;
-    private BuildingScene buildingScene;
-    private DockScene dockScene;
-    private ArrayList<Location> locations = new ArrayList<Location>();
+    private boolean blocked;
+    private String symbol;
+    private Question question;
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", blocked=" + blocked + ", buildingScene=" + buildingScene + ", dockScene=" + dockScene + ", locations=" + locations + '}';
+        return "Scene{" + "description=" + description + ", blocked=" + blocked + ", symbol=" + symbol + ", question=" + question + '}';
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean isBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.description);
-        hash = 29 * hash + (int) (Double.doubleToLongBits(this.blocked) ^ (Double.doubleToLongBits(this.blocked) >>> 32));
-        hash = 29 * hash + Objects.hashCode(this.buildingScene);
-        hash = 29 * hash + Objects.hashCode(this.dockScene);
-        hash = 29 * hash + Objects.hashCode(this.locations);
+        hash = 83 * hash + Objects.hashCode(this.description);
+        hash = 83 * hash + (this.blocked ? 1 : 0);
+        hash = 83 * hash + Objects.hashCode(this.symbol);
+        hash = 83 * hash + Objects.hashCode(this.question);
         return hash;
     }
 
@@ -48,65 +78,19 @@ public class Scene {
             return false;
         }
         final Scene other = (Scene) obj;
-        if (Double.doubleToLongBits(this.blocked) != Double.doubleToLongBits(other.blocked)) {
+        if (this.blocked != other.blocked) {
             return false;
         }
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.buildingScene, other.buildingScene)) {
+        if (!Objects.equals(this.symbol, other.symbol)) {
             return false;
         }
-        if (!Objects.equals(this.dockScene, other.dockScene)) {
-            return false;
-        }
-        if (!Objects.equals(this.locations, other.locations)) {
+        if (!Objects.equals(this.question, other.question)) {
             return false;
         }
         return true;
-    }
-
-    public Scene() {
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public double getBlocked() {
-        return blocked;
-    }
-
-    public void setBlocked(double blocked) {
-        this.blocked = blocked;
-    }
-
-    public BuildingScene getBuildingScene() {
-        return buildingScene;
-    }
-
-    public void setBuildingScene(BuildingScene buildingScene) {
-        this.buildingScene = buildingScene;
-    }
-
-    public DockScene getDockScene() {
-        return dockScene;
-    }
-
-    public void setDockScene(DockScene dockScene) {
-        this.dockScene = dockScene;
-    }
-
-    public ArrayList <Location> getLocations() {
-        return locations;
-    }
-
-    public void setLocations(ArrayList <Location> locations) {
-        this.locations = locations;
     }
     
 }

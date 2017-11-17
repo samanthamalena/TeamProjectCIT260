@@ -13,23 +13,65 @@ import model.Scene;
  * @author SamanthaMalena
  */
 public class Location {
-    private double locationType;
-    private ArrayList<Actor> actors = new ArrayList<Actor>();
-    private Scene scene;
-    private Map map;
+    private int row;
+    private int column;
+    private boolean visited;
+    private double amountRemaining;
+    private Scene scene; 
 
     @Override
     public String toString() {
-        return "Location{" + "locationType=" + locationType + ", actors=" + actors + ", scene=" + scene + ", map=" + map + '}';
+        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", scene=" + scene + '}';
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    public double getAmountRemaining() {
+        return amountRemaining;
+    }
+
+    public void setAmountRemaining(double amountRemaining) {
+        this.amountRemaining = amountRemaining;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.locationType) ^ (Double.doubleToLongBits(this.locationType) >>> 32));
-        hash = 97 * hash + Objects.hashCode(this.actors);
-        hash = 97 * hash + Objects.hashCode(this.scene);
-        hash = 97 * hash + Objects.hashCode(this.map);
+        int hash = 5;
+        hash = 83 * hash + this.row;
+        hash = 83 * hash + this.column;
+        hash = 83 * hash + (this.visited ? 1 : 0);
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.amountRemaining) ^ (Double.doubleToLongBits(this.amountRemaining) >>> 32));
+        hash = 83 * hash + Objects.hashCode(this.scene);
         return hash;
     }
 
@@ -45,54 +87,21 @@ public class Location {
             return false;
         }
         final Location other = (Location) obj;
-        if (Double.doubleToLongBits(this.locationType) != Double.doubleToLongBits(other.locationType)) {
+        if (this.row != other.row) {
             return false;
         }
-        if (!Objects.equals(this.actors, other.actors)) {
+        if (this.column != other.column) {
+            return false;
+        }
+        if (this.visited != other.visited) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.amountRemaining) != Double.doubleToLongBits(other.amountRemaining)) {
             return false;
         }
         if (!Objects.equals(this.scene, other.scene)) {
             return false;
         }
-        if (!Objects.equals(this.map, other.map)) {
-            return false;
-        }
         return true;
     }
-
-    public Location() {
-    }
-
-    public Scene getScene() {
-        return scene;
-    }
-
-    public void setScene(Scene scene) {
-        this.scene = scene;
-    }
-
-    public Map getMap() {
-        return map;
-    }
-
-    public void setMap(Map map) {
-        this.map = map;
-    }
-
-    public double getLocationType() {
-        return locationType;
-    }
-
-    public void setLocationType(double locationType) {
-        this.locationType = locationType;
-    }
-
-    public ArrayList <Actor> getActors() {
-        return actors;
-    }
-
-    public void setActors(ArrayList <Actor> actors) {
-        this.actors = actors;
-    }
-
 }
