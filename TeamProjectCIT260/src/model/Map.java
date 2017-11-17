@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -16,20 +17,15 @@ public class Map {
     private double rows;
     private double columns;
     private Game game;
-    private Location location;
-
-    @Override
-    public String toString() {
-        return "Map{" + "rows=" + rows + ", columns=" + columns + ", game=" + game + ", location=" + location + '}';
-    }
+    private Location[][] locations;
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 71 * hash + (int) (Double.doubleToLongBits(this.rows) ^ (Double.doubleToLongBits(this.rows) >>> 32));
-        hash = 71 * hash + (int) (Double.doubleToLongBits(this.columns) ^ (Double.doubleToLongBits(this.columns) >>> 32));
-        hash = 71 * hash + Objects.hashCode(this.game);
-        hash = 71 * hash + Objects.hashCode(this.location);
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.rows) ^ (Double.doubleToLongBits(this.rows) >>> 32));
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.columns) ^ (Double.doubleToLongBits(this.columns) >>> 32));
+        hash = 83 * hash + Objects.hashCode(this.game);
+        hash = 83 * hash + Arrays.deepHashCode(this.locations);
         return hash;
     }
 
@@ -54,13 +50,15 @@ public class Map {
         if (!Objects.equals(this.game, other.game)) {
             return false;
         }
-        if (!Objects.equals(this.location, other.location)) {
+        if (!Arrays.deepEquals(this.locations, other.locations)) {
             return false;
         }
         return true;
     }
 
-    public Map() {
+    @Override
+    public String toString() {
+        return "Map{" + "rows=" + rows + ", columns=" + columns + ", game=" + game + ", locations=" + locations + '}';
     }
 
     public double getRows() {
@@ -87,11 +85,13 @@ public class Map {
         this.game = game;
     }
 
-    public Location getLocation() {
-        return location;
+    public Location[][] getLocations() {
+        return locations;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
+    
+    
 }

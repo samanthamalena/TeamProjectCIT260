@@ -13,8 +13,10 @@ import teamprojectcit260.TeamProjectCIT260;
  */
 public class GameControl {
 
+   
     public GameControl(){
     }
+    
     public Player savePlayer(String playerName){
         if(playerName.length() < 1 || playerName == null){
             return null;
@@ -52,8 +54,37 @@ public class GameControl {
     }
     
     private static Map createMap(int numRows, int numColumns) {
+        if (numRows < 0 || numColumns < 0) {
+            return null;
+        }
         Map map = new Map();
+        map.setRows(numRows);
+        map.setColumns(numColumns);
+        Location[][] locations = createLocations(numRows, numColumns);
+        map.setLocations(locations);
+        Scene[] scenes = createScene();
+        Question[] questions = createQuestions();
+        assignQuestionsToScenes(questions, scenes);
+        assignScenesToLocations(scenes, locations);
         return map;
     }
 
+     private static Location[][] createLocations(int numRows, int numColumns) {
+         if(numRows < 1 || numColumns <1)
+             return null;
+         Location[][] locations = (numRows, numColumns);
+
+    }
+     private static Question[] createQuestions() {
+    }
+
+     private static Scene[] createScene() {
+    }
+     private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes){
+         
+     }
+     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations){
+         
+     }
+    
 }
