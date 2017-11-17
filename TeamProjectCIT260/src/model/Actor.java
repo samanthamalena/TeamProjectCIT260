@@ -67,6 +67,17 @@ public class Actor {
 
     public Actor() {
     }
+    
+    public Actor(String namE){
+        this.name = namE;
+    }
+    
+    public Actor(String namE, String descriptioN){
+        this.name = namE;
+        this.description = descriptioN;
+    }
+    
+    
 
     public String getName() {
         return name;

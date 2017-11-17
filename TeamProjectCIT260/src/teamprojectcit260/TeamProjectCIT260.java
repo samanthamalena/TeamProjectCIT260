@@ -8,6 +8,7 @@ package teamprojectcit260;
 import view.StartProgramView;
 import view.MainMenuView;
 import control.EquationControl;
+import model.*;
 
 
 /**
@@ -15,13 +16,31 @@ import control.EquationControl;
  * @author derpHead
  */
 public class TeamProjectCIT260 {
+    
+    private static Game currentGame = null;
+    private static Player currentPlayer = null;
 
-    /*f*
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         StartProgramView derp = new StartProgramView();
         derp.display();
     }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        TeamProjectCIT260.currentGame = currentGame;
+    }
+
+    public static Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public static void setCurrentPlayer(Player currentPlayer) {
+        TeamProjectCIT260.currentPlayer = currentPlayer;
+    }
+    
+    
     
 }

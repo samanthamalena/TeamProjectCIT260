@@ -14,10 +14,18 @@ import java.util.Objects;
 public class Game implements Serializable {
     private double totalTime;
     private Map map;
-    private ArrayList<Player> players = new ArrayList<Player>();
-    private ArrayList<Actor> actors = new ArrayList<Actor>();
+    private Actor[] actors;
+    private Player player;
 
     public Game() {
+    }
+
+    public Actor[] getActors() {
+        return actors;
+    }
+
+    public void setActors(Actor[] actors) {
+        this.actors = actors;
     }
     
     public double getTotalTime() {
@@ -28,13 +36,16 @@ public class Game implements Serializable {
         return map;
     }
 
-    public ArrayList<Player> getPlayers() {
-        return players;
+    public Player getPlayer() {
+        return player;
     }
 
-    public ArrayList<Actor> getActors() {
-        return actors;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
+
+  
+
 
     public void setTotalTime(double totalTime) {
         this.totalTime = totalTime;
@@ -44,20 +55,14 @@ public class Game implements Serializable {
         this.map = map;
     }
 
-    public void setPlayers(ArrayList<Player> players) {
-        this.players = players;
-    }
 
-    public void setActors(ArrayList<Actor> actors) {
-        this.actors = actors;
-    }
 
     @Override
     public int hashCode() {
         int hash = 3;
         hash = 67 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
         hash = 67 * hash + Objects.hashCode(this.map);
-        hash = 67 * hash + Objects.hashCode(this.players);
+        hash = 67 * hash + Objects.hashCode(this.player);
         hash = 67 * hash + Objects.hashCode(this.actors);
         return hash;
     }
@@ -80,7 +85,7 @@ public class Game implements Serializable {
         if (!Objects.equals(this.map, other.map)) {
             return false;
         }
-        if (!Objects.equals(this.players, other.players)) {
+        if (!Objects.equals(this.player, other.player)) {
             return false;
         }
         if (!Objects.equals(this.actors, other.actors)) {
@@ -91,7 +96,7 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "totalTime=" + totalTime + ", map=" + map + ", players=" + players + ", actors=" + actors + '}';
+        return "Game{" + "totalTime=" + totalTime + ", map=" + map + ", player=" + player + ", actors=" + actors + '}';
     }
 
     
