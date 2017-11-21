@@ -26,8 +26,7 @@ public class StartProgramView extends View {
     @Override
     public boolean doAction(String[] inputs) {
         String playerName = inputs[0];
-        GameControl herp = new GameControl();
-        Player player = herp.savePlayer(playerName);
+        Player player = GameControl.savePlayer(playerName);
         if (player == null){
             System.out.println("\nCould not create the player\nEnter a different name.");
             return false;

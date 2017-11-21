@@ -13,17 +13,21 @@ import teamprojectcit260.TeamProjectCIT260;
  */
 public class GameControl {
 
+    private static Resource[] createResources() {
+    }
+
    
     public GameControl(){
     }
     
-    public Player savePlayer(String playerName){
+    public static Player savePlayer(String playerName){
         if(playerName.length() < 1 || playerName == null){
             return null;
         }
         Player player = new Player();
         player.setName(playerName);
         
+        TeamProjectCIT260.setCurrentPlayer(player);
         return player;
     }
     
@@ -37,6 +41,7 @@ public class GameControl {
         TeamProjectCIT260.setCurrentGame(game);
         Actor[] actors = GameControl.createActors();
         game.setActors(actors);
+        Resource[] resources = GameControl.createResources();
         Map map = createMap(1,1);
         if (map == null){
             return -1;
@@ -124,5 +129,7 @@ public class GameControl {
          locations[2][2].setScene(new Scene());
          
      }
+
+
     
 }

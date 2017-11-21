@@ -14,6 +14,15 @@ import java.io.Serializable;
 public class BuildingScene implements Serializable {
     private int numberOfSurvivors;
     private int numberOfResources;
+    private Resource[] resources;
+
+    public Resource[] getResources() {
+        return resources;
+    }
+
+    public void setResources(Resource[] resources) {
+        this.resources = resources;
+    }
 
     public BuildingScene() {
     }

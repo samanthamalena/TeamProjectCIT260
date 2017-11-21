@@ -6,6 +6,7 @@
 package view;
 import java.util.Scanner;
 import control.GameControl;
+import teamprojectcit260.TeamProjectCIT260;
 
 /**
  *
@@ -49,9 +50,8 @@ public class MainMenuView extends View {
     
     }
     public void newState() {
-        GameControl game = new GameControl();
-        game.createNewGame();
-    
+        GameControl.createNewGame(TeamProjectCIT260.getCurrentPlayer());
+        
     }
     public void helpMenu() {
         HelpMenuView help = new HelpMenuView();
