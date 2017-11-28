@@ -14,6 +14,7 @@ import teamprojectcit260.TeamProjectCIT260;
 public class GameControl {
 
     private static Resource[] createResources() {
+        return null;
     }
 
    

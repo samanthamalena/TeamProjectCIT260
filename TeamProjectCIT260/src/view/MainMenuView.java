@@ -21,7 +21,7 @@ public class MainMenuView extends View {
    @Override
     public String[] getInputs(){
         String inputs[] = new String[1];
-        inputs[0] = this.getInput("\nMain menu Prompot ");
+        inputs[0] = this.getInput("\nMain Menu \n Enter 'L' to load a previous game \n Enter 'N' to start a new game \n Enter 'H' for the Help MenuSa");
         return inputs;
     }
     
@@ -47,11 +47,14 @@ public class MainMenuView extends View {
     }
     
     public void loadState() {
-    
+       GameMenuView pirates = new GameMenuView();
+       pirates.display();
     }
     public void newState() {
         GameControl.createNewGame(TeamProjectCIT260.getCurrentPlayer());
+        GameMenuView ahoy = new GameMenuView();
         
+        ahoy.display();
     }
     public void helpMenu() {
         HelpMenuView help = new HelpMenuView();
