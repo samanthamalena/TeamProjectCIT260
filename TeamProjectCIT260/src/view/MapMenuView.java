@@ -5,6 +5,10 @@
  */
 package view;
 
+import model.Game;
+import model.Location;
+import teamprojectcit260.TeamProjectCIT260;
+
 
 /**
  *
@@ -31,7 +35,7 @@ public class MapMenuView extends View {
         menuItem.trim();
         switch (menuItem){
             case "E":
-                this.displayExploreMenu();
+                this.displayMap();
                 break;
             case "I":
                 this.displayInfo();
@@ -42,8 +46,20 @@ public class MapMenuView extends View {
         return true;
     }
    
-    public void displayExploreMenu() {
-   
+    public void displayMap() {
+        Game game = TeamProjectCIT260.getCurrentGame();
+        Location[][] locations = game.getMap().getLocations();
+        System.out.println("title");
+        int colNum = 1;
+        for(int i = 0; i < game.getMap().getColumns(); i++){ 
+            System.out.println(colNum);
+            colNum++;
+        }
+        int rowNum = 1;
+        for(int i = 0 ; i < game.getMap().getRows(); i++){
+            System.out.println("--------------------------------\n");
+            System.out.println(rowNum);
+        }
     }
     public void displayInfo() {
     

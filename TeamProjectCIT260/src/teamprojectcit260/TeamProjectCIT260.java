@@ -18,13 +18,13 @@ import model.*;
 public class TeamProjectCIT260 {
     
     private static Game currentGame = null;
-    private static Player currentPlayer = null;
-
+    private static Player currentPlayer;
+////////////////////////////////////////////////////
     public static void main(String[] args) {
         StartProgramView derp = new StartProgramView();
         derp.display();
     }
-
+/////////////////////////////////////////////////////
     public static Game getCurrentGame() {
         return currentGame;
     }
