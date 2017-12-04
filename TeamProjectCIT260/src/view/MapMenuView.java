@@ -48,19 +48,42 @@ public class MapMenuView extends View {
    
     public void displayMap() {
         Game game = TeamProjectCIT260.getCurrentGame();
-        Location[][] locations = game.getMap().getLocations();
-        System.out.println("title");
+        //Location[][] locations = game.getMap().getLocations();
+        System.out.print("title\n");
+        System.out.print("  ");
+        int rows = game.getMap().getRows();
+        int cols = game.getMap().getColumns();
         int colNum = 1;
-        for(int i = 0; i < game.getMap().getColumns(); i++){ 
-            System.out.println(colNum);
+        System.out.print("  ");
+        for(int i = 0; i < cols; i++){ 
+            System.out.print(colNum + "  ");
             colNum++;
         }
+        System.out.print("\n");
         int rowNum = 1;
-        for(int i = 0 ; i < game.getMap().getRows(); i++){
-            System.out.println("--------------------------------\n");
-            System.out.println(rowNum);
+        for(int i = 0 ; i < rows ; i++){
+            if( i < 9){
+                System.out.print("   --------------------------------\n");
+                System.out.print(rowNum + " ");
+                for (int h = 0; h < cols; h++){
+                    System.out.print(" | ");
+                }
+                System.out.print("\n");
+                rowNum++;
+            }
+            else {
+                System.out.print("   --------------------------------\n");
+                System.out.print(rowNum);
+                for (int h = 0; h < cols; h++){
+                    System.out.print(" | ");
+                }
+                System.out.print("\n");
+                rowNum++;
+            }
         }
     }
+    
+    
     public void displayInfo() {
     
     }
