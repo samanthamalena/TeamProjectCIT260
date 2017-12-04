@@ -14,8 +14,8 @@ import java.util.Objects;
  * @author SamanthaMalena
  */
 public class Map {
-    private double rows;
-    private double columns;
+    private int rows;
+    private int columns;
     private Game game;
     private Location[][] locations;
 
@@ -61,19 +61,19 @@ public class Map {
         return "Map{" + "rows=" + rows + ", columns=" + columns + ", game=" + game + ", locations=" + locations + '}';
     }
 
-    public double getRows() {
+    public int getRows() {
         return rows;
     }
 
-    public void setRows(double rows) {
+    public void setRows(int rows) {
         this.rows = rows;
     }
 
-    public double getColumns() {
+    public int getColumns() {
         return columns;
     }
 
-    public void setColumns(double columns) {
+    public void setColumns(int columns) {
         this.columns = columns;
     }
 
