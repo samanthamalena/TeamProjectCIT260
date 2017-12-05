@@ -63,7 +63,10 @@ public class MapMenuView extends View {
         int rowNum = 1;
         for(int i = 0 ; i < rows ; i++){
             if( i < 9){
-                System.out.print("   --------------------------------\n");
+                for(int pr = 0; pr < cols * 4; pr++){
+                    System.out.print("-");
+                }
+                System.out.print("\n");
                 System.out.print(rowNum + " ");
                 for (int h = 0; h < cols; h++){
                     System.out.print(" | ");

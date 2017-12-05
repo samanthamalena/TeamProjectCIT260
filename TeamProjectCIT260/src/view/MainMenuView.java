@@ -53,7 +53,6 @@ public class MainMenuView extends View {
     public void newState() {
         GameControl.createNewGame(TeamProjectCIT260.getCurrentPlayer());
         GameMenuView ahoy = new GameMenuView();
-        
         ahoy.display();
     }
     public void helpMenu() {

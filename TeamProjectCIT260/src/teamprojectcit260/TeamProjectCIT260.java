@@ -20,17 +20,8 @@ public class TeamProjectCIT260 {
     private static Player currentPlayer;
 ////////////////////////////////////////////////////
     public static void main(String[] args) {
-        //StartProgramView derp = new StartProgramView();
-        //derp.display();
-        Game game = new Game();
-        Map map = new Map();
-        map.setColumns(100);
-        map.setRows(100);
-        game.setMap(map);
-        setCurrentGame(game);
-        MapMenuView mapV = new MapMenuView();
-        mapV.displayMap();
-        
+        StartProgramView derp = new StartProgramView();
+        derp.display();
     }
 /////////////////////////////////////////////////////
     public static Game getCurrentGame() {
