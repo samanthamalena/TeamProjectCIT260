@@ -24,8 +24,8 @@ public class TeamProjectCIT260 {
         //derp.display();
         Game game = new Game();
         Map map = new Map();
-        map.setColumns(100);
-        map.setRows(100);
+        map.setColumns(10);
+        map.setRows(10);
         game.setMap(map);
         setCurrentGame(game);
         MapMenuView mapV = new MapMenuView();
