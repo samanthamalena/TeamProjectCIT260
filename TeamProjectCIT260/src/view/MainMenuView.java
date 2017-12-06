@@ -36,7 +36,7 @@ public class MainMenuView extends View {
                 break;
             case "N":
                 this.newState();
-                break;
+                return false;
             case "H":
                 this.helpMenu();
                 break;
