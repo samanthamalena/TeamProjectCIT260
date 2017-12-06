@@ -7,7 +7,7 @@ package control;
 
 import model.*;
 import teamprojectcit260.TeamProjectCIT260;
-
+import java.util.ArrayList;
 /**
  *
  * @author Me
@@ -124,5 +124,22 @@ public class GameControl {
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations) {
         locations[0][0].setScene(scenes[0]);
     }
-
+    
+    private static void resourceSort(ArrayList<Resource> resources){
+        for (Resource items : resources)
+        {
+           alphaSort(items, items);
+        }
+    }
+     private static Resource alphaSort(Resource one, Resource two){
+         char cow = one.getName().charAt(0);
+         char pig = two.getName().charAt(0);
+         if (cow > pig){
+             return one;
+         }
+         else 
+             return two;
+     }
+    
+    
 }
