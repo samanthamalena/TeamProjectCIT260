@@ -48,5 +48,6 @@ public class EquationControl {
             return Math.round(100 * equation)/100.0;
         }
    }
-   
 }
+
+
