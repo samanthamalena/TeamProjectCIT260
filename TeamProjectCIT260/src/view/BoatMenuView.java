@@ -50,8 +50,8 @@ public class BoatMenuView {
     
     private boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
-        menuItem.toUpperCase();
-        menuItem.trim();
+        menuItem = menuItem.toUpperCase();
+        menuItem = menuItem.trim();
         switch (menuItem){
             case "B":
                 this.buildBoat();

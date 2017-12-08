@@ -17,6 +17,8 @@ import teamprojectcit260.TeamProjectCIT260;
  * @author Me
  */
 public class MapControl {
+    
+    
     public void displayMap() throws MapControlException {
         Game game = TeamProjectCIT260.getCurrentGame();
         Location[][] locations = game.getMap().getLocations();
