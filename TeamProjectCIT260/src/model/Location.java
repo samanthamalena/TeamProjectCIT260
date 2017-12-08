@@ -19,6 +19,9 @@ public class Location {
     private double amountRemaining;
     private Scene scene; 
 
+    public Location() {
+    }
+
     @Override
     public String toString() {
         return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", scene=" + scene + '}';
@@ -39,14 +42,15 @@ public class Location {
     public void setColumn(int column) {
         this.column = column;
     }
-
-    public boolean isVisited() {
-        return visited;
-    }
-
+    
     public void setVisited(boolean visited) {
         this.visited = visited;
     }
+
+    public boolean getVisited() {
+        return visited;
+    }
+    
 
     public double getAmountRemaining() {
         return amountRemaining;
