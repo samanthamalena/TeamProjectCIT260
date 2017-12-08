@@ -28,7 +28,7 @@ public class MainMenuView extends View {
     @Override
     public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
-        menuItem.toUpperCase();
+        menuItem = menuItem.toUpperCase();
         menuItem.trim();
         switch (menuItem){
             case "L":
