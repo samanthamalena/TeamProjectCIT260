@@ -15,67 +15,16 @@ import java.util.Objects;
 public class Player implements Serializable {
     private String name;
     private double lastDatePlayed;
-
-    @Override
-    public String toString() {
-        return "Player{" + "name=" + name + ", lastDatePlayed=" + lastDatePlayed + ", actor=" + actor + ", games=" + games + ", bestScore=" + bestScore + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.name);
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.lastDatePlayed) ^ (Double.doubleToLongBits(this.lastDatePlayed) >>> 32));
-        hash = 89 * hash + Objects.hashCode(this.actor);
-        hash = 89 * hash + Objects.hashCode(this.games);
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.bestScore) ^ (Double.doubleToLongBits(this.bestScore) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Player other = (Player) obj;
-        if (Double.doubleToLongBits(this.lastDatePlayed) != Double.doubleToLongBits(other.lastDatePlayed)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.bestScore) != Double.doubleToLongBits(other.bestScore)) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.actor, other.actor)) {
-            return false;
-        }
-        return Objects.equals(this.games, other.games);
-    }
+    private Actor actor;
 
     public void setActor(Actor actor) {
         this.actor = actor;
     }
 
-    public void setGames(ArrayList<Game> games) {
-        this.games = games;
-    }
 
     public Actor getActor() {
         return actor;
     }
-
-    public ArrayList<Game> getGames() {
-        return games;
-    }
-    private Actor actor;
-    private ArrayList<Game> games = new ArrayList<Game>();
 
     public Player() {
     }

@@ -18,7 +18,7 @@ public class DockMenuView extends View {
     @Override
     public String[] getInputs(){
         String inputs[] = new String[1];
-        inputs[0] = this.getInput("\nMain menu Prompot ");
+        inputs[0] = this.getInput("\nYou are on the dock. Take a rest from your travels ");
         return inputs;
     }
     

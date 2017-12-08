@@ -17,7 +17,7 @@ public class GameMenuView extends View {
     @Override
     public String[] getInputs(){
         String inputs[] = new String[1];
-        inputs[0] = this.getInput("\nGame Menu ViEW");
+        inputs[0] = this.getInput("\nGame Menu \n M - map menu\n B - view boat resources\n L - view location\n S - save game\n Q - quit");
         return inputs;
     }
     
@@ -29,13 +29,13 @@ public class GameMenuView extends View {
         switch (menuItem){
             case "M":
                 this.viewMap();
-                break;
+                return false;
             case "B":
                 this.viewBoat();
-                break;
+                return false;
             case "L":
                 this.viewLocation();
-                break;
+                return false;
             case "Q":
                 
                 break;

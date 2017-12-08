@@ -5,6 +5,7 @@
  */
 package control;
 
+import static java.lang.Math.random;
 import model.*;
 import teamprojectcit260.TeamProjectCIT260;
 import java.util.ArrayList;
@@ -15,7 +16,11 @@ import java.util.ArrayList;
 public class GameControl {
 
     private static Resource[] createResources() {
-        return null;
+        Resource[] resources = new Resource[10];
+        for (int i = 0; i < resources.length; i++) {
+            resources[i] = new Resource();
+        }
+        return resources;
     }
 
     public GameControl() {
@@ -41,12 +46,16 @@ public class GameControl {
         TeamProjectCIT260.setCurrentGame(game);
         Actor[] actors = GameControl.createActors();
         game.setActors(actors);
+        game.getPlayer().setActor(actors[0]);
         Resource[] resources = GameControl.createResources();
+        game.setResources(resources);
+        player.getActor().setLocation(new Location());
+        player.getActor().getLocation().setRow(0);
+        player.getActor().getLocation().setColumn(0);
         Map map = createMap(5, 5);
         if (map == null) {
             return -1;
         }
-
         game.setMap(map);
         return 1;
     }
@@ -71,7 +80,7 @@ public class GameControl {
         map.setColumns(numColumns);
         Location[][] locations = createLocations(numRows, numColumns);
         map.setLocations(locations);
-        Scene[] scenes = createScenes();
+        Scene[] scenes = createScenes(numRows, numColumns);
         Question[] questions = createQuestions();
         assignQuestionsToScenes(questions, scenes);
         assignScenesToLocations(scenes, locations);
@@ -106,8 +115,9 @@ public class GameControl {
         return questions;
     }
 
-    private static Scene[] createScenes() {
-        Scene[] scenes = new Scene[2];
+    private static Scene[] createScenes(int numR, int numC) {
+        
+        Scene[] scenes = new Scene[numR * numC];
         for (int i = 0; i < scenes.length; i++) {
             scenes[i] = new Scene();
         }
@@ -122,7 +132,18 @@ public class GameControl {
     }
 
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations) {
-        locations[0][0].setScene(scenes[0]);
+        for (int i = 0; i < locations.length; i++){
+            for(int k = 0; k < locations[0].length; k++){
+                locations[i][k].setScene(new Scene());
+                locations[i][k].getScene().setDescription(randomizer());
+                if (locations[i][k].getScene().getDescription() == "building"){
+                    locations[i][k].getScene().setSymbol("[#]");
+                }
+                else {
+                    locations[i][k].getScene().setSymbol("~~~");
+                }
+            }
+        }
     }
     
     private static void resourceSort(ArrayList<Resource> resources){
@@ -139,6 +160,19 @@ public class GameControl {
          }
          else 
              return two;
+     }
+     
+     private static String randomizer() {
+        String str = "";
+        double digit = random();
+        if (digit > 0.5){
+            str = "building";
+        }
+        else{
+            str = "open water";
+        }
+         
+         return str;
      }
     
     

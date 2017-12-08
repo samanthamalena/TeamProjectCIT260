@@ -15,6 +15,15 @@ public class Game implements Serializable {
     private double totalTime;
     private Map map;
     private Actor[] actors;
+    private Resource[] resources;
+
+    public Resource[] getResources() {
+        return resources;
+    }
+
+    public void setResources(Resource[] resources) {
+        this.resources = resources;
+    }
     private Player player;
 
     public Game() {
