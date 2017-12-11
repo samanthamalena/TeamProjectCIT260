@@ -144,5 +144,12 @@ public class GameControl {
         return scene;
      }
     
-    
-}
+     private int howManyBuildingsFound(){
+        Game gameOne = TeamProjectCIT260.getCurrentGame();
+        Location locations[][] = gameOne.getMap().getLocations();
+        
+    }
+             
+             
+             
+ }
