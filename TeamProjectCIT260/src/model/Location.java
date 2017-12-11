@@ -16,7 +16,6 @@ public class Location {
     private int row;
     private int column;
     private boolean visited;
-    private double amountRemaining;
     private Scene scene; 
 
     public Location() {
@@ -24,7 +23,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", scene=" + scene + '}';
+        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", scene=" + scene + '}';
     }
 
     public int getRow() {
@@ -50,15 +49,6 @@ public class Location {
     public boolean getVisited() {
         return visited;
     }
-    
-
-    public double getAmountRemaining() {
-        return amountRemaining;
-    }
-
-    public void setAmountRemaining(double amountRemaining) {
-        this.amountRemaining = amountRemaining;
-    }
 
     public Scene getScene() {
         return scene;
@@ -74,7 +64,6 @@ public class Location {
         hash = 83 * hash + this.row;
         hash = 83 * hash + this.column;
         hash = 83 * hash + (this.visited ? 1 : 0);
-        hash = 83 * hash + (int) (Double.doubleToLongBits(this.amountRemaining) ^ (Double.doubleToLongBits(this.amountRemaining) >>> 32));
         hash = 83 * hash + Objects.hashCode(this.scene);
         return hash;
     }
@@ -98,9 +87,6 @@ public class Location {
             return false;
         }
         if (this.visited != other.visited) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.amountRemaining) != Double.doubleToLongBits(other.amountRemaining)) {
             return false;
         }
         if (!Objects.equals(this.scene, other.scene)) {

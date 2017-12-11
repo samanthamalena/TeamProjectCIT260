@@ -14,30 +14,11 @@ import java.util.ArrayList;
  * @author SamanthaMalena
  */
 public class Scene {
-    private String description;
-    private boolean blocked;
     private String symbol;
-    private Question question;
+    private String message;
+    private String foundMessage;
 
-    @Override
-    public String toString() {
-        return "Scene{" + "description=" + description + ", blocked=" + blocked + ", symbol=" + symbol + ", question=" + question + '}';
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public boolean isBlocked() {
-        return blocked;
-    }
-
-    public void setBlocked(boolean blocked) {
-        this.blocked = blocked;
+    public Scene() {
     }
 
     public String getSymbol() {
@@ -48,49 +29,22 @@ public class Scene {
         this.symbol = symbol;
     }
 
-    public Question getQuestion() {
-        return question;
+    public String getMessage() {
+        return message;
     }
 
-    public void setQuestion(Question question) {
-        this.question = question;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 83 * hash + Objects.hashCode(this.description);
-        hash = 83 * hash + (this.blocked ? 1 : 0);
-        hash = 83 * hash + Objects.hashCode(this.symbol);
-        hash = 83 * hash + Objects.hashCode(this.question);
-        return hash;
+    public String getFoundMessage() {
+        return foundMessage;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Scene other = (Scene) obj;
-        if (this.blocked != other.blocked) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.symbol, other.symbol)) {
-            return false;
-        }
-        if (!Objects.equals(this.question, other.question)) {
-            return false;
-        }
-        return true;
+    public void setFoundMessage(String foundMessage) {
+        this.foundMessage = foundMessage;
     }
+
+    
     
 }

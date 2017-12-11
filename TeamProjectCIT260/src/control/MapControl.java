@@ -81,14 +81,11 @@ public class MapControl {
             throw new MapControlException("the actor is Null!!!!");
         }
         Game game = TeamProjectCIT260.getCurrentGame();
-        Map map = game.getMap();
-        int currentRow = actor.getLocation().getRow();
-        int currentColumn = actor.getLocation().getColumn();
         Location newL = new Location();
         newL.setColumn(nColumn);
         newL.setRow(nRow);
         game.getPlayer().getActor().setLocation(newL);
-        
+        System.out.print(actor.getLocation().getScene().getFoundMessage());
         return true;
     }
   

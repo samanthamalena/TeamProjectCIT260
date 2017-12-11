@@ -32,7 +32,6 @@ public class GameControl {
         }
         Player player = new Player();
         player.setName(playerName);
-
         TeamProjectCIT260.setCurrentPlayer(player);
         return player;
     }
@@ -82,7 +81,6 @@ public class GameControl {
         map.setLocations(locations);
         Scene[] scenes = createScenes(numRows, numColumns);
         Question[] questions = createQuestions();
-        assignQuestionsToScenes(questions, scenes);
         assignScenesToLocations(scenes, locations);
         return map;
     }
@@ -100,6 +98,7 @@ public class GameControl {
                 locations[i][k].setVisited(false);
             }
         }
+        locations[0][0].setScene(new DockScene());
         return locations;
     }
 
@@ -124,55 +123,25 @@ public class GameControl {
         return scenes;
     }
 
-    private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes) {
-        for (int i = 0; i < questions.length; i++) {
-            scenes[i].setQuestion(questions[i]);
-        }
-
-    }
 
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations) {
         for (int i = 0; i < locations.length; i++){
             for(int k = 0; k < locations[0].length; k++){
-                locations[i][k].setScene(new Scene());
-                locations[i][k].getScene().setDescription(randomizer());
-                if (locations[i][k].getScene().getDescription() == "building"){
-                    locations[i][k].getScene().setSymbol("[#]");
-                }
-                else {
-                    locations[i][k].getScene().setSymbol("~~~");
-                }
+                locations[i][k].setScene(randomizer());
             }
         }
     }
-    
-    private static void resourceSort(ArrayList<Resource> resources){
-        for (Resource items : resources)
-        {
-           alphaSort(items, items);
-        }
-    }
-     private static Resource alphaSort(Resource one, Resource two){
-         char cow = one.getName().charAt(0);
-         char pig = two.getName().charAt(0);
-         if (cow > pig){
-             return one;
-         }
-         else 
-             return two;
-     }
      
-     private static String randomizer() {
-        String str = "";
+     private static Scene randomizer() {
+        Scene scene = new Scene();
         double digit = random();
-        if (digit > 0.5){
-            str = "building";
+        if (digit < 0.5){
+            scene = new BuildingScene();
         }
-        else{
-            str = "open water";
+        else {
+            scene = new WaterScene();
         }
-         
-         return str;
+        return scene;
      }
     
     
