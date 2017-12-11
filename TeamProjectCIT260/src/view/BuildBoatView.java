@@ -37,7 +37,7 @@ public class BuildBoatView {
             String name = infile.nextLine();
             name.trim();
             if (name.length() < 1){
-                System.out.println("\nyou must enter a value");
+                System.out.println("\nYou must enter a value");
             }
             else{
                 inputs[0] = name;
