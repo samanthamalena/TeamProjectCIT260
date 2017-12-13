@@ -148,6 +148,7 @@ public class GameControl {
         Game gameOne = TeamProjectCIT260.getCurrentGame();
         Location locations[][] = gameOne.getMap().getLocations();
         
+        return -1;
     }
              
              
