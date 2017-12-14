@@ -144,5 +144,13 @@ public class GameControl {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    
-}
+     private int howManyBuildingsFound(){
+        Game gameOne = TeamProjectCIT260.getCurrentGame();
+        Location locations[][] = gameOne.getMap().getLocations();
+        
+        return -1;
+    }
+             
+             
+             
+ }
