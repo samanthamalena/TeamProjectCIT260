@@ -16,6 +16,15 @@ public class Player implements Serializable {
     private String name;
     private double lastDatePlayed;
     private Actor actor;
+    private ArrayList<Resource> resources = new ArrayList<Resource>();
+
+    public ArrayList<Resource> getResources() {
+        return resources;
+    }
+
+    public void setResources(ArrayList<Resource> resources) {
+        this.resources = resources;
+    }
 
     public void setActor(Actor actor) {
         this.actor = actor;
