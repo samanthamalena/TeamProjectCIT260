@@ -56,7 +56,10 @@ public class MainMenuView extends View {
         ahoy.display();
     }
     public void helpMenu() {
-        System.out.print("\nhelp menu!!!\n");
+        System.out.print("\nThis is the help menu.\n The objective of the game is to save survivors and to gather resources \n"
+                + "If you are having troubles, toggle back and forth from the map to the number of resources you have. \n"
+                + "Make sure that you do the mini game answers correctly. That way you can move to the next level. Whenver you\n"
+                + "want to move back between maps use 'Q' to exit that menu and enter another one");
     }
     
 }
