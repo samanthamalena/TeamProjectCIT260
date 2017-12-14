@@ -17,7 +17,8 @@ import java.util.ArrayList;
 public class WaterScene extends Scene{
 
     public WaterScene() {
-        setFoundMessage("Just keep swimming through the Water");
+        setSymbol("~~~");
+        setFoundMessage("\nJust keep swimming through the Water---u can do dis!!!\n");
     }
 
 

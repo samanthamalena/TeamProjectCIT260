@@ -25,7 +25,7 @@ public class MapMenuView extends View {
    @Override
     public String[] getInputs(){
         String inputs[] = new String[1];
-        inputs[0] = this.getInput("\nMap Menu Prompt\n E - display map\n M - move Actor\n\n ");
+        inputs[0] = this.getInput("\nMap Menu Prompt\n E - display map\n M - move Actor\n Q - quit\n ");
         return inputs;
     }
 
@@ -33,8 +33,8 @@ public class MapMenuView extends View {
     @Override
      public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
-        menuItem.toUpperCase();
-        menuItem.trim();
+        menuItem = menuItem.toUpperCase();
+        menuItem = menuItem.trim();
         switch (menuItem){
             case "E":
                 try{

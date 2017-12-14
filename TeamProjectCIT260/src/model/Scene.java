@@ -17,6 +17,24 @@ public class Scene {
     private String symbol;
     private String message;
     private String foundMessage;
+    private boolean isBuilding;
+
+    public boolean isIsBuilding() {
+        return isBuilding;
+    }
+
+    public void setIsBuilding(boolean isBuilding) {
+        this.isBuilding = isBuilding;
+    }
+    Resource resource;
+
+    public Resource getResource() {
+        return resource;
+    }
+
+    public void setResource(Resource resource) {
+        this.resource = resource;
+    }
 
     public Scene() {
     }

@@ -16,10 +16,10 @@ public class DockScene extends Scene{
 
     public DockScene() {
         setSymbol("(D)");
-        setMessage("This is the Dock. Here You can save your"
+        setMessage("\nThis is the Dock. Here You can save your"
                            + " game and see your resources, If you have enough,"
                            + " then you can build a bigger boat and move on to"
-                           + " the next level");
+                           + " the next level\n");
     }
 
   

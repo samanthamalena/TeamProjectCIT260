@@ -16,7 +16,9 @@ import java.util.ArrayList;
 public class BuildingScene extends Scene{
 
     public BuildingScene() {
-        setFoundMessage("You successfully found a building! \n Now go find some survivors!");
+        setSymbol("(#)");
+        setFoundMessage("\nYou successfully found a building!");
+        setMessage("You already found this building STUPID HEAD!!!\n");
     }
 
 

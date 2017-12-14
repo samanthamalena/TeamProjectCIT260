@@ -23,6 +23,24 @@ public class GameControl {
         return resources;
     }
 
+    private static Resource resourceRandom() {
+        double digit = random();
+        Resource resource = new Resource();
+        if (digit < 0.33){
+            resource.setDescription("some gasoline");
+            resource.setName("gas");
+        }
+        else if (digit < 0.66){
+            resource.setDescription("a survivor");
+            resource.setName("survivor");
+        }
+        else{
+            resource.setDescription("some food and first aid supplies");
+            resource.setName("food");
+        }
+        return resource;
+    }
+
     public GameControl() {
     }
 
@@ -70,7 +88,7 @@ public class GameControl {
         return actors;
     }
 
-    private static Map createMap(int numRows, int numColumns) {
+    static Map createMap(int numRows, int numColumns) {
         if (numRows < 1 || numColumns < 1) {
             return null;
         }
@@ -79,9 +97,6 @@ public class GameControl {
         map.setColumns(numColumns);
         Location[][] locations = createLocations(numRows, numColumns);
         map.setLocations(locations);
-        Scene[] scenes = createScenes(numRows, numColumns);
-        Question[] questions = createQuestions();
-        assignScenesToLocations(scenes, locations);
         return map;
     }
 
@@ -93,56 +108,41 @@ public class GameControl {
         for (int i = 0; i < numRows; i++) {
             for (int k = 0; k < numColumns; k++) {
                 locations[i][k] = new Location();
+                locations[i][k].setScene(randomizer());
                 locations[i][k].setRow(i);
                 locations[i][k].setColumn(k);
                 locations[i][k].setVisited(false);
             }
         }
         locations[0][0].setScene(new DockScene());
+        locations[0][0].setVisited(true);
         return locations;
     }
 
-    private static Question[] createQuestions() {
-        Question[] questions = new Question[2];
-        for (int i = 0; i < questions.length; i++) {
-            questions[i] = new Question();
-        }
-        questions[0].setAnswer("");
-        questions[0].setQuestion("");
-        questions[1].setAnswer("");
-        questions[1].setQuestion("");
-        return questions;
-    }
 
-    private static Scene[] createScenes(int numR, int numC) {
-        
-        Scene[] scenes = new Scene[numR * numC];
-        for (int i = 0; i < scenes.length; i++) {
-            scenes[i] = new Scene();
-        }
-        return scenes;
-    }
-
-
-    private static void assignScenesToLocations(Scene[] scenes, Location[][] locations) {
-        for (int i = 0; i < locations.length; i++){
-            for(int k = 0; k < locations[0].length; k++){
-                locations[i][k].setScene(randomizer());
-            }
-        }
-    }
      
      private static Scene randomizer() {
         Scene scene = new Scene();
         double digit = random();
-        if (digit < 0.5){
+        if (digit > 0.5){
             scene = new BuildingScene();
+            scene.setIsBuilding(true);
+            scene.setResource(resourceRandom());
         }
         else {
             scene = new WaterScene();
+            scene.setIsBuilding(false);
         }
         return scene;
      }
+
+    public void saveGames() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void loadGames() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

@@ -9,6 +9,7 @@ import control.MapControl;
 import exception.MapControlException;
 import static java.lang.Integer.parseInt;
 import model.Actor;
+import model.Location;
 import model.Player;
 import teamprojectcit260.TeamProjectCIT260;
 
@@ -34,6 +35,7 @@ public class MoveActorView extends View {
         try {
             int r = parseInt(row);
             int c = parseInt(column);
+            Location current = TeamProjectCIT260.getCurrentGame().getMap().getLocations()[r][c];
             try {
                 MapControl mc = new MapControl();
                 mc.moveActor(actor, r, c);

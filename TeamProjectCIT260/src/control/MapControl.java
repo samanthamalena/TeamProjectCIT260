@@ -6,10 +6,12 @@
 package control;
 
 import exception.MapControlException;
+import java.util.ArrayList;
 import model.Actor;
 import model.Game;
 import model.Location;
 import model.Map;
+import model.Resource;
 import teamprojectcit260.TeamProjectCIT260;
 
 /**
@@ -25,7 +27,7 @@ public class MapControl {
         if(locations == null){
             throw new MapControlException("There r no Locations!!!!");
         }
-        System.out.print("\nMap of The Flooded Town\n\n");
+        System.out.print("\nMap of The Flooded Town\n      Level " + game.getLevel() +"\n");
         int rows = game.getMap().getRows();
         int cols = game.getMap().getColumns();
         System.out.print("   ");
@@ -65,7 +67,6 @@ public class MapControl {
         if (game.getPlayer().getActor().getLocation().getColumn() == location.getColumn() &&
                  game.getPlayer().getActor().getLocation().getRow() == location.getRow()){
             sym = " P ";
-            location.setVisited(true);
         }
         else if (location.getVisited() == false){
             sym = "???";
@@ -80,13 +81,28 @@ public class MapControl {
         if (actor == null){
             throw new MapControlException("the actor is Null!!!!");
         }
+        
         Game game = TeamProjectCIT260.getCurrentGame();
+        if (nRow > game.getMap().getRows() || nColumn > game.getMap().getColumns()){
+            throw new MapControlException("\nYou have to be on the MAP, STUPID HEAD!!!!\n");
+        }
         Location newL = new Location();
         newL.setColumn(nColumn);
         newL.setRow(nRow);
         game.getPlayer().getActor().setLocation(newL);
-        System.out.print(actor.getLocation().getScene().getFoundMessage());
+        if (game.getMap().getLocations()[nRow][nColumn].getVisited() == false){
+            System.out.print(game.getMap().getLocations()[nRow][nColumn].getScene().getFoundMessage());
+            if (game.getMap().getLocations()[nRow][nColumn].getScene().isIsBuilding()){
+                    System.out.print("\nYou Found " + game.getMap().getLocations()[nRow][nColumn].getScene().getResource().getName() + "!!!\n");
+                    game.getPlayer().getResources().add(game.getMap().getLocations()[nRow][nColumn].getScene().getResource());
+            }
+            game.getMap().getLocations()[nRow][nColumn].setVisited(true);
+        }
+        else {
+            System.out.print(game.getMap().getLocations()[nRow][nColumn].getScene().getMessage());
+        }
         return true;
     }
+
   
 }

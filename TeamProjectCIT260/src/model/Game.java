@@ -16,6 +16,15 @@ public class Game implements Serializable {
     private Map map;
     private Actor[] actors;
     private Resource[] resources;
+    int level;
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     public Resource[] getResources() {
         return resources;

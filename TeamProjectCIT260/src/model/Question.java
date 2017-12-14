@@ -12,17 +12,17 @@ import java.util.Objects;
  * @author Me
  */
 public class Question {
-    private String answer;
+    private double answer;
     private String question;
 
     public Question() {
     }
 
-    public String getAnswer() {
+    public double getAnswer() {
         return answer;
     }
 
-    public void setAnswer(String answer) {
+    public void setAnswer(double answer) {
         this.answer = answer;
     }
 

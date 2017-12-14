@@ -21,7 +21,7 @@ public class MainMenuView extends View {
    @Override
     public String[] getInputs(){
         String inputs[] = new String[1];
-        inputs[0] = this.getInput("\nMain Menu \n Enter 'L' to load a previous game \n Enter 'N' to start a new game \n Enter 'H' for the Help MenuSa");
+        inputs[0] = this.getInput("\nMain Menu \n Enter 'L' to load a previous game \n Enter 'N' to start a new game \n Enter 'H' for the Help Menu");
         return inputs;
     }
     
@@ -33,13 +33,13 @@ public class MainMenuView extends View {
         switch (menuItem){
             case "L":
                 this.loadState();
-                break;
+                return false;
             case "N":
                 this.newState();
                 return false;
             case "H":
                 this.helpMenu();
-                break;
+                return false;
             case "Q":
                 break;
         }
@@ -47,8 +47,8 @@ public class MainMenuView extends View {
     }
     
     public void loadState() {
-       GameMenuView pirates = new GameMenuView();
-       pirates.display();
+       GameControl pirates = new GameControl();
+       pirates.loadGames();
     }
     public void newState() {
         GameControl.createNewGame(TeamProjectCIT260.getCurrentPlayer());
@@ -56,8 +56,7 @@ public class MainMenuView extends View {
         ahoy.display();
     }
     public void helpMenu() {
-        HelpMenuView help = new HelpMenuView();
-        help.display();
+        System.out.print("\nhelp menu!!!\n");
     }
     
 }
