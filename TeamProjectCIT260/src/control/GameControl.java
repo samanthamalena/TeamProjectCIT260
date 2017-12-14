@@ -5,6 +5,7 @@
  */
 package control;
 
+import exception.GameControlException;
 import static java.lang.Math.random;
 import model.*;
 import teamprojectcit260.TeamProjectCIT260;
@@ -136,20 +137,17 @@ public class GameControl {
         return scene;
      }
 
-    public void saveGames() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void saveGames(Game game) throws GameControlException {
+        if (game == null){
+            throw new GameControlException("the game doesnt exist");
+        }
+        
     }
 
     public void loadGames() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
     
-     private int howManyBuildingsFound(){
-        Game gameOne = TeamProjectCIT260.getCurrentGame();
-        Location locations[][] = gameOne.getMap().getLocations();
-        
-        return -1;
-    }
              
              
              
