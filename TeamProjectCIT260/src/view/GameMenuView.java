@@ -81,8 +81,8 @@ public class GameMenuView extends View {
     private void saveGame() {
        if(TeamProjectCIT260.getCurrentGame().getPlayer().getActor().getLocation().getColumn() == 0 && 
            TeamProjectCIT260.getCurrentGame().getPlayer().getActor().getLocation().getRow() == 0){
-           GameControl gc = new GameControl();
-           gc.saveGames();
+           SaveGameView sm = new SaveGameView();
+           sm.display();
        }
     }
 }

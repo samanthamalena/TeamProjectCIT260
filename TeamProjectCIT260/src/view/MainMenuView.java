@@ -47,8 +47,8 @@ public class MainMenuView extends View {
     }
     
     public void loadState() {
-       GameControl pirates = new GameControl();
-       pirates.loadGames();
+       LoadGameView pirates = new LoadGameView();
+       pirates.display();
     }
     public void newState() {
         GameControl.createNewGame(TeamProjectCIT260.getCurrentPlayer());

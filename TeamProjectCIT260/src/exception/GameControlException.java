@@ -11,4 +11,8 @@ package exception;
  */
 public class GameControlException extends Exception {
     
+    
+    public GameControlException(String string) {
+        super(string);
+    }
 }
