@@ -35,13 +35,13 @@ public class TeamProjectCIT260 {
             StartProgramView derp = new StartProgramView();
             derp.display(); 
         }
-        catch(IOException e){
+        catch(Throwable e){
             System.out.print("Exception: " + e.toString() +
                              "\nCause: " + e.getCause() +
                              "\nMessage: " + e.getMessage());
         }
         finally {
-            TeamProjectCIT260.inFile.close();
+            //TeamProjectCIT260.inFile.close();
             TeamProjectCIT260.outFile.close();
         }
     }
